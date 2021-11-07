@@ -1,0 +1,40 @@
+koval_review:
+  path: '/koval/koval_review'
+  defaults:
+    _title: 'Guest Book'
+    _controller: '\Drupal\koval\Controller\GuestBookReviewsController::build'
+  requirements:
+    _permission: 'access content'
+
+entity.koval_review.canonical:
+  path: '/koval/koval_review/{koval_review}'
+  defaults:
+    _entity_view: 'koval_review'
+    _title: 'Review of user'
+  requirements:
+    _permission: 'review.view'
+
+entity.koval_review.delete_form:
+  path: '/koval/koval_review/{koval_review}/delete'
+  defaults:
+    _entity_form: 'koval_review.delete'
+    _title: 'Delete review'
+  requirements:
+    _permission: 'accces content'
+
+entity.koval_review.edit:
+  path: '/koval/koval_review/{koval_review}/edit'
+  defaults:
+    _entity_form: 'koval_review.default'
+    _title: 'Edit form'
+  requirements:
+    _permission: 'review.edit'
+
+entity.koval_review.collection:
+  path: '/koval/koval_review/list'
+  defaults:
+    _entity_list: 'koval_review'
+    _title: 'List a comments'
+  requirements:
+    _permission: 'administer contact entity'
+

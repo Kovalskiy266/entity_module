@@ -1,0 +1,41 @@
+{# ** @file modules/custom/koval/templates/koval-guestbook-page.html.twig
+ *
+ * Default theme implementation to present guest_book data.
+ *
+ * Available variables:
+ * - content: A list of content items. Use 'content' to print all content, or
+ *          content.field_name to access public fields
+ * - attributes: HTML attributes for the container element.
+ *
+ * @see template_preprocess_koval_review()
+ *
+ * @ingroup themeable
+ */
+#}
+{{ attach_library('koval/guestbook.reviews') }}
+
+<div class="main-wrapper">
+    <div class = "user-data-wrapper">
+      <div class="avatar-container">{{ content.avatar }}</div>
+      <div class="name-container">{{ content.name }}</div>
+      <div class="date-container">{{ content.date_created }}</div>
+    </div>
+    <div class = "review-wrapper">
+      <div class="comment-container">{{ content.review }}</div>
+      {% if content.image != NULL %}
+        <div class="image-container">{{ content.image }}</div>
+      {% endif %}
+    </div>
+    <div class="contact-data-wrapper">
+      {% if 'administrator' in user.getroles %}
+        <div class="administration-buttons-wrapper">
+          {{ button }}
+        </div>
+      {% endif %}
+      <div class="contact-container">
+        <div class="phone-container">{{ content.phone_number }}</div>
+        <div class="email-container">{{ content.email }}</div>
+      </div>
+    </div>
+  </div>
+

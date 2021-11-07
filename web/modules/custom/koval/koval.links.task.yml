@@ -1,0 +1,16 @@
+# Define the 'local' links for the module
+
+review.view:
+  route_name: entity.koval_review.canonical
+  base_route: entity.koval_review.canonical
+  title: View a review
+
+review.edit:
+  route_name: entity.koval_review.edit
+  base_route: entity.koval_review.canonical
+  title: Edit a review
+
+review.delete:
+  route_name: entity.koval_review.delete_form
+  base_route: entity.koval_review.canonical
+  title: Delete a review
